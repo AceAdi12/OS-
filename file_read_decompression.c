@@ -93,7 +93,6 @@ int main(int argc, char** argv){
            (unsigned long long)hdr.code_count,
            (unsigned long long)hdr.payload_bit_count);
 
-    /* Rebuild codebook → tree */
     Node* root = new_int();
     for(uint64_t i=0;i<hdr.code_count;i++){
         uint8_t sym; uint16_t clen;

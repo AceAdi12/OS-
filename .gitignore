@@ -1,15 +1,24 @@
-# Ignore build outputs
-a.out
+# Build outputs
 *.o
+*.out
 *.exe
 
-# Ignore runtime files
-storage.bin
+# Virtual disk and metadata files
+*.bin
 *.meta
-recovered_*
 hash_index.txt
 
-# Ignore editor & OS files
-.vscode/
+# Test / temporary files
 *.log
+*.tmp
+*.txt
+myfile*
+recovered*
+
+# Python cache
 __pycache__/
+*.pyc
+
+# Editor / OS files
+.vscode/
+*.DS_Store
