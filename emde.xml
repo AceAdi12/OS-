@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.0">
+  <diagram name="Storage Virtualization - No AWS" id="0">
+    <mxGraphModel dx="2382" dy="730" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="user" value="User / CLI&#xa;(mkdisk, mount, write, read, ls)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F0FE;strokeColor=#2563EB;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="-20" y="215" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" value="Auth &amp; ACL&#xa;(users, tokens, permissions)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#D97706;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="260" y="40" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vdisk" value="VDisk Manager&#xa;(create/format/mount)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#059669;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="260" y="130" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="fs" value="File System Layer&#xa;(directory table, inode/FAT-like)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#B45309;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="260" y="334" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="bio" value="Block I/O / Buffering" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E7FF;strokeColor=#3730A3;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="260" y="510" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cache" value="Cache (RAM) (hot blocks, buffers)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#065F46;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="460" y="620" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="opt" value="Optimization Layer(deduplication, hashing, compression)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#B91C1C;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="540" y="180" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="meta" value="Metadata DB(file index, hashes, offsets)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#4F46E5;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="1010" y="190" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="local" value="Local Storage(storage.bin - physical pool)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F8FF;strokeColor=#0EA5A3;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="980" y="370" width="260" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_user_vdisk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1" parent="1" source="user" target="vdisk" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_auth_vdisk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1" parent="1" source="auth" target="vdisk" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_vdisk_fs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1" parent="1" source="vdisk" target="fs" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_fs_bio" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1" parent="1" source="fs" target="bio" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bio_local" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1" parent="1" source="bio" target="local" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bio_cache" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;dashed=1" parent="1" source="bio" target="cache" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bio_opt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1" parent="1" source="bio" target="opt" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_opt_meta" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;dashed=1" parent="1" source="opt" target="meta" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_meta_local" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1" parent="1" source="meta" target="local" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label_cli" value="CLI → control flow" style="text;html=1;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="20" y="314" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label_cache" value="RAM cache for hot blocks" style="text;html=1;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="480" y="700" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label_opt" value="Deduplication &amp; compression happen before writing" style="text;html=1;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="540" y="155" width="300" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,15 @@
+# Ignore build outputs
+a.out
+*.o
+*.exe
+
+# Ignore runtime files
+storage.bin
+*.meta
+recovered_*
+hash_index.txt
+
+# Ignore editor & OS files
+.vscode/
+*.log
+__pycache__/
