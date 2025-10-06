@@ -1,24 +1,22 @@
-# Build outputs
+# Ignore build files
 *.o
-*.out
 *.exe
+*.out
 
-# Virtual disk and metadata files
-*.bin
+# Ignore compiled binaries
+storage_cli
+file_write_compressed
+file_read_decompression
+delete_file
+
+# Ignore metadata and test data
 *.meta
+*.bin
+*.txt
+*.pdf
+*.xml
 hash_index.txt
 
-# Test / temporary files
-*.log
-*.tmp
-*.txt
-myfile*
-recovered*
-
-# Python cache
-__pycache__/
-*.pyc
-
-# Editor / OS files
-.vscode/
-*.DS_Store
+# Ignore system files
+.DS_Store
+Thumbs.db
