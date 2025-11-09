@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-#define BLOCK_SIZE 4096 //We are using here 4KB of block size
+#define BLOCK_SIZE 4096 //4KB of block size
 
 void createStoragePool(const char*filename,long long size){
     FILE *f=fopen(filename,"wb");
