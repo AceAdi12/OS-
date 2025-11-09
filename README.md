@@ -113,19 +113,19 @@ OS PROJECT/
 | **9. Error Handling** | Try reading/deleting non-existent file | Graceful error message displayed (no crash) | ✅ Passed |
 | **10. Large File Handling** | Compress and decompress large file (10–50 MB) | System handles it efficiently without corruption | ✅ Passed |
 
-##🧑‍💻 Author
+## 🧑‍💻 Author
 Aditya (AceAdi12)
 📍 Developed as part of an Operating Systems Project (2025)
 🧠 Focus: Storage Virtualization, C Programming, System Design
 
-##🌟 Future Enhancements
+## 🌟 Future Enhancements
 
 -🧩 Add user-level file encryption (AES-256)
 -📊 Integrate monitoring dashboard (I/O stats)
 -☁️ Extend to cloud-based block storage simulation
 -🔐 Implement user access control system
 
-##🏆 Project Outcome
+## 🏆 Project Outcome
 
 This project demonstrates a complete simulation of a virtual storage manager,
 showcasing real-world OS concepts such as file systems, compression, and caching.
